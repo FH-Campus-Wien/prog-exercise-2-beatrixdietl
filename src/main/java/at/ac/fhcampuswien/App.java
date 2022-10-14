@@ -100,14 +100,11 @@ public class App {
 
                     if (mark == 5) {
                         negativemark++;
-
                     }
                     count++;
 
                 } else if (mark > 5) {
-
                         System.out.println("Invalid mark!");
-
                     }
 
                 else {
@@ -141,13 +138,31 @@ public class App {
 
         Scanner scan = new Scanner(System.in);
         System.out.print("n: ");
-        //int number = scan.nextInt();
+        int number = scan.nextInt();
 
-       // for (int n = 1; digits < 10; n++){
+        double n = 0;
 
-        //   int digits = number % 10;
+        //if (number != 1 && number != 4) {
+            do {
+                while (number != 0) {
+                    n = n + Math.pow((number % 10), 2);
+                    number = number / 10;
+                }
+                number = (int) n;
+                n = 0;
 
-        }
+            } while (number != 1 && number != 4);
+
+            if (number == 1){
+                System.out.println("Happy number!");
+            } else {
+                System.out.println("Sad number!");
+            }
+
+        //}
+
+
+    }
 
 
 
