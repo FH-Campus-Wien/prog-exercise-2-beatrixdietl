@@ -11,7 +11,6 @@ public class App {
         int count = 1;
         double largest = 0;
 
-
         do {
             System.out.print("Number " + count + ": ");
             number = scan.nextDouble();
@@ -20,6 +19,7 @@ public class App {
                 largest = number;
             }
         } while (number > 0);
+
         if (number <= 0 && count == 2) {
             System.out.println("No number entered.");
 
@@ -34,7 +34,7 @@ public class App {
         Scanner scan = new Scanner(System.in);
         System.out.print("n: ");
         int rows = scan.nextInt();
-        int number = 1;
+        int number = 1; //fortzählende Nummer
 
         if (rows <= 0){
             System.out.println("Invalid number!");
@@ -55,7 +55,8 @@ public class App {
     public void printPyramid(){
         // 3 Schleifen (Zeilen, Spalten, Abstand zum Rand)
         // rows minus i für die Leerzeichen
-        // Zusammen Sterne Zeilen  Sterne = 2 mal Zeilennummer minus 1
+        // Sterne = 2 mal Zeilennummer minus 1
+
         int rows = 6;
 
         for (int i = 0; i < rows; i++) {
@@ -83,14 +84,54 @@ public class App {
     }
 
     //todo Task 5
-    public void marks(){
+    public void marks() {
         Scanner scan = new Scanner(System.in);
         int sum = 0;
-        //while (){
-            //scan.nextInt;
+        int count = 1;
+        int mark;
+        int negativemark = 0;
 
+        do {
+                System.out.print("Mark " + count + ": ");
+                mark = scan.nextInt();
+
+                if (mark < 6 && mark != 0) {
+                    sum += mark;
+
+                    if (mark == 5) {
+                        negativemark++;
+
+                    }
+                    count++;
+
+                } else if (mark > 5) {
+
+                        System.out.println("Invalid mark!");
+
+                    }
+
+                else {
+                    count--;
+                }
+
+
+        } while (mark != 0);
+
+        if (count != 0) {
+
+            double average = (double) sum / (double) count;
+
+
+            System.out.println("Average: " + String.format("%.2f", average));
+            System.out.println("Negative marks: " + negativemark);
+            // https://www.edureka.co/community/5865/display-output-float-data-with-decimal-places-java-please-help
+
+            }
+        else {
+            System.out.println("Average: 0.00");
+            System.out.println("Negative marks: " + negativemark);
         }
-        // negative mark ist die Anzahl der Fünfer
+        }
 
 
     //todo Task 6
@@ -100,7 +141,7 @@ public class App {
 
         Scanner scan = new Scanner(System.in);
         System.out.print("n: ");
-        int number = scan.nextInt();
+        //int number = scan.nextInt();
 
        // for (int n = 1; digits < 10; n++){
 
