@@ -24,30 +24,17 @@ public class App {
             System.out.println("No number entered.");
 
         } else {
-            double roundnumber = Math.round(number*100.0)/100.0; // https://www.delftstack.com/de/howto/java/how-to-round-a-double-to-two-decimal-places-in-java/#:~:text=Die%20Methode%20Math.,double*100.0)%2F100.0%20beinhalten.
             System.out.println("The largest number is " + String.format("%.2f",largest));
+            // https://www.edureka.co/community/5865/display-output-float-data-with-decimal-places-java-please-help
         }
     }
-
-//                if (number > 0 && number > largest) {
-//                    largest = number;
-//                }
-//            } while (number > 0);
-//            if (number <= 0 && count == 2){
-//                System.out.println("No number entered.");
-//            } else {
-//            System.out.println("The largest number is " + largest);
-//         }  if (number <= 0 && count != 1);{
-//        if (number <= 0 && count != 1);{
-
-
 
     //todo Task 2
     public void stairs(){
         Scanner scan = new Scanner(System.in);
         System.out.print("n: ");
         int rows = scan.nextInt();
-        int zahl = 1;
+        int number = 1;
 
         if (rows <= 0){
             System.out.println("Invalid number!");
@@ -55,8 +42,8 @@ public class App {
 
         for (int i = 0; i < rows; i++) {
                 for (int j = 0; j <= i; j++) {
-                    System.out.print(zahl + " ");
-                    zahl++;
+                    System.out.print(number + " ");
+                    number++;
                     }
                 System.out.println();
                 }
@@ -75,12 +62,13 @@ public class App {
                 for (int j = 1; j < rows-i ; j++) {
                     System.out.print(" ");
                 }
-                    for (int k = 0; k < i*2+1; k++) {
+
+                for (int k = 0; k < i*2+1; k++) {
                         System.out.print("*");
-                    }
-            System.out.println();
                 }
+            System.out.println();
         }
+    }
 
 
     //todo Task 4
